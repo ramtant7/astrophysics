@@ -1,14 +1,30 @@
+//document.getElementById("aboutProject").addEventListener()
 
-//                  Физические постоянные
-const G = 6.668*(10**-8)  // см**2|г**2
-const c = 2.9979*(10**10) // см|с
-const ae = 1.496*(10**13) // см
-const RS = 6.96*(10**10)  // см
-const MS = 1.991*(10**33) // г
+function aboutProjectClick(){
+    window.location.href = "Three.html";
+}
 
+function theoryClick(){
+    window.location.href = "Two.html";
+}
 
-console.log(`Hello World!`)
-var age = prompt("введите год рождения")
-console.log(age)
-var pasport = prompt("введите номер и серию паспорта","[],[]")
-console.log(pasport)
+//console.log(`Hello World!`)
+// var age = prompt("введите год рождения")
+// console.log(age)
+// var passport = prompt("введите номер и серию паспорта")
+// console.log(passport)
+//
+//
+// const aaa = {age: age, passport: "passport"}
+// const request = new Request("http://localhost:8888/api/123", {
+//     method: "POST",
+//     body: JSON.stringify(aaa),
+//     headers:{
+//         'Content-type': 'application/json; charset=UTF-8'
+//     }
+// });
+//
+// fetch(request)
+//     .then((res)  => {
+//         console.log(res)
+//     })
