@@ -1,0 +1,233 @@
+.div1 {
+    position: absolute;
+    top: 93px;
+    left: 1382px;
+    text-decoration: underline;
+    line-height: 130%;
+    font-weight: 500;
+}
+.div2 {
+    position: absolute;
+    top: 67px;
+    left: 1700px;
+    text-decoration: underline;
+    line-height: 130%;
+    font-weight: 500;
+}
+.div3 {
+    position: absolute;
+    top: 119px;
+    left: 1773px;
+    text-decoration: underline;
+    line-height: 130%;
+    font-weight: 500;
+    text-align: right;
+}
+.div4 {
+    position: absolute;
+    top: 41px;
+    left: 1479px;
+    text-decoration: underline;
+    line-height: 130%;
+    font-weight: 500;
+}
+.div5 {
+    position: absolute;
+    top: 119px;
+    left: 48px;
+    line-height: 130%;
+    font-weight: 500;
+}
+.div6 {
+    position: absolute;
+    top: 93px;
+    left: 48px;
+    line-height: 130%;
+    font-weight: 500;
+    display: flex;
+    align-items: flex-end;
+    width: 492px;
+    height: 26px;
+}
+.div7 {
+    position: absolute;
+    top: 67px;
+    left: 48px;
+    line-height: 130%;
+    font-weight: 500;
+    display: flex;
+    align-items: flex-end;
+    width: 613px;
+    height: 26px;
+}
+.orbitalika {
+    position: absolute;
+    top: 41px;
+    left: 48px;
+    line-height: 130%;
+    font-weight: 500;
+    display: flex;
+    align-items: flex-end;
+    width: 475px;
+    height: 26px;
+}
+.div {
+    position: absolute;
+    top: 814px;
+    left: 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25) inset;
+    background: linear-gradient(rgba(191, 186, 186, 0.2), rgba(191, 186, 186, 0.2)), linear-gradient(rgba(234, 234, 234, 0.2), rgba(234, 234, 234, 0.2)), #fff;
+    width: 1920px;
+    height: 186px;
+    overflow-x: auto;
+}
+.icon {
+    position: absolute;
+    top: 31px;
+    left: 1242px;
+    width: 678px;
+    height: 643px;
+    object-fit: cover;
+}
+.span {
+    font-size: 48px;
+}
+.p {
+    margin: 0;
+}
+.span1 {
+    font-size: 36px;
+}
+.span2 {
+    text-decoration: underline;
+}
+.a {
+    color: inherit;
+}
+.li {
+    margin-bottom: 0px;
+}
+.ol {
+    margin: 0;
+    font-family: inherit;
+    padding-left: 48px;
+}
+.txt {
+    width: 100%;
+}
+.div9 {
+    position: absolute;
+    top: 165px;
+    left: 106px;
+    line-height: 130%;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    width: 1096px;
+    height: 376px;
+}
+.div8 {
+    position: absolute;
+    top: 108px;
+    left: 0px;
+    background-color: #fff;
+    width: 1920px;
+    height: 706px;
+    overflow: hidden;
+    font-size: 36px;
+    color: #000;
+}
+.orbitalika1 {
+    position: absolute;
+    top: 38px;
+    left: 48px;
+    font-size: 32px;
+    letter-spacing: -0.01em;
+    line-height: 100%;
+    font-weight: 500;
+    color: #000;
+    text-align: left;
+}
+.a4 {
+    position: absolute;
+    top: 41px;
+    right: 1513px;
+    text-decoration: underline;
+    line-height: 130%;
+    font-weight: 500;
+    color: inherit;
+}
+.a5 {
+    position: absolute;
+    top: 41px;
+    right: 1398px;
+    text-decoration: underline;
+    line-height: 130%;
+    font-weight: 500;
+    color: inherit;
+}
+.a6 {
+    position: absolute;
+    top: 41px;
+    right: 1252px;
+    text-decoration: underline;
+    line-height: 130%;
+    font-weight: 500;
+    color: inherit;
+}
+.language-1-icon {
+    position: absolute;
+    top: 37px;
+    left: 1832px;
+    width: 34px;
+    height: 34px;
+    object-fit: cover;
+}
+.div10 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    width: 1920px;
+    height: 108px;
+    overflow: hidden;
+    text-align: center;
+    color: #c3c3c3;
+}
+.page-4 {
+    width: 100%;
+    position: relative;
+    height: 1000px;
+    text-align: left;
+    font-size: 20px;
+    color: #5a5959;
+    font-family: Chilly;
+}
+
+.a4:hover {
+    color: #000000;
+}
+.a5:hover {
+    color: #000000;
+}
+.a6:hover {
+    color: #000000;
+}
+.div1:hover {
+    color: #000000;
+}
+.div2:hover {
+    color: #000000;
+}
+.div3:hover {
+    color: #000000;
+}
+.div4:hover {
+    color: #000000;
+}
+.span2:hover {
+    color: #5a5959;
+}

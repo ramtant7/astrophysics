@@ -1,0 +1,333 @@
+.div1 {
+    position: absolute;
+    top: 93px;
+    left: 1382px;
+    text-decoration: underline;
+    line-height: 130%;
+    font-weight: 500;
+}
+.div2 {
+    position: absolute;
+    top: 67px;
+    left: 1700px;
+    text-decoration: underline;
+    line-height: 130%;
+    font-weight: 500;
+}
+.div3 {
+    position: absolute;
+    top: 119px;
+    left: 1773px;
+    text-decoration: underline;
+    line-height: 130%;
+    font-weight: 500;
+    text-align: right;
+}
+.div4 {
+    position: absolute;
+    top: 41px;
+    left: 1479px;
+    text-decoration: underline;
+    line-height: 130%;
+    font-weight: 500;
+}
+.div5 {
+    position: absolute;
+    top: 119px;
+    left: 48px;
+    line-height: 130%;
+    font-weight: 500;
+}
+.div6 {
+    position: absolute;
+    top: 93px;
+    left: 48px;
+    line-height: 130%;
+    font-weight: 500;
+    display: flex;
+    align-items: flex-end;
+    width: 492px;
+    height: 26px;
+}
+.div7 {
+    position: absolute;
+    top: 67px;
+    left: 48px;
+    line-height: 130%;
+    font-weight: 500;
+    display: flex;
+    align-items: flex-end;
+    width: 613px;
+    height: 26px;
+}
+.orbitalika {
+    position: absolute;
+    top: 41px;
+    left: 48px;
+    line-height: 130%;
+    font-weight: 500;
+    display: flex;
+    align-items: flex-end;
+    width: 475px;
+    height: 26px;
+}
+.div {
+    position: absolute;
+    top: 2325px;
+    left: 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25) inset;
+    background: linear-gradient(rgba(191, 186, 186, 0.2), rgba(191, 186, 186, 0.2)), linear-gradient(rgba(234, 234, 234, 0.2), rgba(234, 234, 234, 0.2)), #fff;
+    width: 1920px;
+    height: 186px;
+    overflow-x: auto;
+    text-align: left;
+    font-size: 20px;
+    color: #5a5959;
+}
+.p {
+    margin: 0;
+}
+.n-container {
+    position: absolute;
+    top: calc(50% - 172px);
+    left: 147px;
+    line-height: 130%;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    width: 1028px;
+    height: 310px;
+}
+.icon {
+    position: absolute;
+    top: 140px;
+    left: 1453px;
+    width: 296px;
+    height: 302px;
+    object-fit: cover;
+}
+.div8 {
+    position: absolute;
+    top: 1743px;
+    left: 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25) inset;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), linear-gradient(rgba(243, 243, 243, 0.2), rgba(243, 243, 243, 0.2)), linear-gradient(rgba(234, 234, 234, 0.2), rgba(234, 234, 234, 0.2)), #fff;
+    width: 1920px;
+    height: 582px;
+    overflow: hidden;
+    text-align: left;
+}
+.txt {
+    width: 100%;
+}
+.div10 {
+    position: absolute;
+    top: 363px;
+    left: calc(50% - 960px);
+    line-height: 130%;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    width: 1920px;
+}
+.div9 {
+    position: absolute;
+    top: 875px;
+    left: 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) inset, 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    width: 1920px;
+    height: 868px;
+    overflow-x: auto;
+}
+.c {
+    margin: 0;
+    font-size: 48px;
+}
+.orbitalika-c-container {
+    position: absolute;
+    top: 172px;
+    left: 0px;
+    letter-spacing: -0.02em;
+    line-height: 120%;
+    font-weight: 500;
+    color: #000;
+    display: flex;
+    align-items: center;
+    width: 1920px;
+    height: 132px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 64px;
+}
+.div13 {
+    position: absolute;
+    top: calc(50% - 31.5px);
+    left: calc(50% - 155px);
+    line-height: 130%;
+    font-weight: 500;
+}
+.div12 {
+    position: absolute;
+    top: 419px;
+    left: 736px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    background-color: #9eb7e5;
+    width: 448px;
+    height: 102px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.div15 {
+    position: absolute;
+    top: calc(50% - 31.5px);
+    left: calc(50% - 117px);
+    line-height: 130%;
+    font-weight: 500;
+}
+.div14 {
+    position: absolute;
+    top: 418px;
+    left: 1333px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    background-color: #9eb7e5;
+    width: 448px;
+    height: 102px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.div17 {
+    position: absolute;
+    top: calc(50% - 31.5px);
+    left: calc(50% - 80px);
+    line-height: 130%;
+    font-weight: 500;
+}
+.div16 {
+    position: absolute;
+    top: 419px;
+    left: 139px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    background-color: #9eb7e5;
+    width: 448px;
+    height: 102px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.div11 {
+    position: absolute;
+    top: 107px;
+    left: 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25) inset;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), linear-gradient(rgba(243, 243, 243, 0.2), rgba(243, 243, 243, 0.2)), #eaeaea;
+    width: 1920px;
+    height: 768px;
+    overflow: hidden;
+    color: #fff;
+}
+.orbitalika2 {
+    position: absolute;
+    top: 38px;
+    left: 48px;
+    font-size: 32px;
+    letter-spacing: -0.01em;
+    line-height: 100%;
+    font-weight: 500;
+    color: #000;
+    text-align: left;
+}
+.a {
+    position: absolute;
+    top: 41px;
+    right: 1513px;
+    text-decoration: underline;
+    line-height: 130%;
+    font-weight: 500;
+    color: inherit;
+}
+.ahover {
+    color: #000000;
+}
+.a1 {
+    position: absolute;
+    top: 41px;
+    right: 1398px;
+    text-decoration: underline;
+    line-height: 130%;
+    font-weight: 500;
+    color: inherit;
+}
+.a1hover {
+    color: #000000;
+}
+.a2 {
+    position: absolute;
+    top: 41px;
+    right: 1252px;
+    text-decoration: underline;
+    line-height: 130%;
+    font-weight: 500;
+    color: inherit;
+}
+.a2hover {
+    color: #000000;
+}
+.language-1-icon {
+    position: absolute;
+    top: 37px;
+    left: 1832px;
+    width: 34px;
+    height: 34px;
+    object-fit: cover;
+}
+.div18 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    width: 1920px;
+    height: 108px;
+    overflow: hidden;
+    font-size: 20px;
+    color: #c3c3c3;
+}
+.page-1 {
+    width: 100%;
+    position: relative;
+    height: 2511px;
+    text-align: center;
+    font-size: 48px;
+    color: #000;
+    font-family: Chilly;
+}
+
+.div1hover {
+    color: #000000;
+}
+.div2hover {
+    color: #000000;
+}
+.div3hover {
+    color: #000000;
+}
+.div4hover {
+    color: #000000;
+}
+
+.div12hover {
+    background-color: #a2d5a5;
+}
+
+.div14hover {
+    background-color: #a2d5a5;
+}
+
+.div16hover {
+    background-color: #a2d5a5;
+}
