@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import imageio
+from joblib import Parallel, delayed
 
 # Шесть Кеплеровских элементов орбиты
 a = 1.0  # Большая полуось (в астрономических единицах)
@@ -65,8 +66,9 @@ line_color = "blue"
 point_color = "red"
 sun_color = "yellow"
 
-# Цикл для генерации кадров
-for frame in range(frames):
+
+# Функция для генерации одного кадра
+def generate_frame(frame):
     # Создание фигур и осей
     xy_fig, xy_ax = plt.subplots(figsize=(8, 8))
     yz_fig, yz_ax = plt.subplots(figsize=(8, 8))
@@ -103,26 +105,43 @@ for frame in range(frames):
     xy_fig.canvas.draw()
     xy_img = np.frombuffer(xy_fig.canvas.tostring_rgb(), dtype=np.uint8)
     xy_img = xy_img.reshape(xy_fig.canvas.get_width_height()[::-1] + (3,))
-    xy_images.append(xy_img)
 
     yz_fig.canvas.draw()
     yz_img = np.frombuffer(yz_fig.canvas.tostring_rgb(), dtype=np.uint8)
     yz_img = yz_img.reshape(yz_fig.canvas.get_width_height()[::-1] + (3,))
-    yz_images.append(yz_img)
 
     xz_fig.canvas.draw()
     xz_img = np.frombuffer(xz_fig.canvas.tostring_rgb(), dtype=np.uint8)
     xz_img = xz_img.reshape(xz_fig.canvas.get_width_height()[::-1] + (3,))
-    xz_images.append(xz_img)
 
     # Закрытие фигур
     plt.close(xy_fig)
     plt.close(yz_fig)
     plt.close(xz_fig)
 
-# Создание GIF-анимаций
-imageio.mimsave('gif/xy_orbit.gif', xy_images, fps=24,loop = 0)
-imageio.mimsave('gif/yz_orbit.gif', yz_images, fps=24,loop = 0)
-imageio.mimsave('gif/xz_orbit.gif', xz_images, fps=24,loop = 0)
+    return xy_img, yz_img, xz_img
 
-print("Анимации созданы! Проверь файлы xy_orbit_animation.gif, yz_orbit_animation.gif и xz_orbit_animation.gif.")
+
+# Распараллеленная генерация кадров
+results = Parallel(n_jobs=-1)(delayed(generate_frame)(frame) for frame in range(frames))
+
+# Сбор результатов
+for result in results:
+    xy_images.append(result[0])
+    yz_images.append(result[1])
+    xz_images.append(result[2])
+
+files = [
+    ('xy_orbit_animation.gif', xy_images),
+    ('yz_orbit_animation.gif', yz_images),
+    ('xz_orbit_animation.gif', xz_images)
+]
+
+results = Parallel(n_jobs=-1)(delayed(imageio.mimsave)(f1, f2, fps=24, loop=0) for f1, f2 in files)
+
+# # Создание GIF-анимаций
+# imageio.mimsave('xy_orbit_animation.gif', xy_images, fps=24, loop=0)
+# imageio.mimsave('yz_orbit_animation.gif', yz_images, fps=24, loop=0)
+# imageio.mimsave('xz_orbit_animation.gif', xz_images, fps=24, loop=0)
+#
+# print("Анимации созданыны! Проверь файлы xy_orbit_animation.gif, yz_orbit_animation.gif и xz_orbit_animation.gif.")
