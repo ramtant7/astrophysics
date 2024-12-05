@@ -14,12 +14,14 @@ op1 = rebound.OrbitPlot(sim, particles=[1,3])
 op2 = rebound.OrbitPlot(sim, particles=[2], ax=op1.ax, fig=op1.fig, lw=5, color="red")
 
 
-for i in range(3):
-    sim.integrate(sim.t+0.31)
+for i in range(100):
+    sim.integrate(sim.t+0.01)
     op1.update()
     op2.update()
-    op1.fig.savefig("out_%02d.png"%i)
+    op1.fig.savefig("img/out_%02d.png"%i)
 
 
 ops = rebound.OrbitPlotSet(sim)
 ops.fig.savefig("orbit.png")
+
+
