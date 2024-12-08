@@ -132,9 +132,9 @@ for result in results:
     xz_images.append(result[2])
 
 files = [
-    ('xy_orbit_animation.gif', xy_images),
-    ('yz_orbit_animation.gif', yz_images),
-    ('xz_orbit_animation.gif', xz_images)
+    ('git/xy_orbit_animation.gif', xy_images),
+    ('git/yz_orbit_animation.gif', yz_images),
+    ('git/xz_orbit_animation.gif', xz_images)
 ]
 
 results = Parallel(n_jobs=-1)(delayed(imageio.mimsave)(f1, f2, fps=24, loop=0) for f1, f2 in files)
