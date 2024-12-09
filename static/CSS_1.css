@@ -189,7 +189,7 @@
 .child {
   	position: absolute;
   	top: 126px;
-  	left: 587px;
+  	left: 974px;
     border: 1px solid #ccc;
     border-radius: 20px;
     font-size: 35px;
@@ -202,7 +202,7 @@
 .item {
   	position: absolute;
   	top: 205px;
-  	left: 652px;
+  	left: 974px;
     border: 1px solid #ccc;
     border-radius: 20px;
     font-size: 35px;
@@ -215,7 +215,7 @@
 .inner {
   	position: absolute;
   	top: 284px;
-  	left: 900px;
+  	left: 974px;
     border: 1px solid #ccc;
     border-radius: 20px;
     font-size: 35px;
@@ -228,7 +228,7 @@
 .ellipse-div {
   	position: absolute;
   	top: 363px;
-  	left: 900px;
+  	left: 974px;
     border: 1px solid #ccc;
     border-radius: 20px;
     font-size: 35px;
