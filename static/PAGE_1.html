@@ -3,14 +3,15 @@
 <head>
   	<meta charset="utf-8">
   	<meta name="viewport" content="initial-scale=1, width=device-width">
-  	
-  	<link rel="stylesheet"  href="./index.css" />
-  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chilly:wght@500&display=swap" />
-  	
-  	
-  	
+
+	<link rel="stylesheet"  href="main.css"/>
+  	<link rel="stylesheet"  href="CSS_1.css"/>
+
+	<title>Orbitalika</title>
+
 </head>
 <body>
+	
   	
   	<div class="page-1">
     		<div class="div">
@@ -30,29 +31,34 @@
           					<p class="p">&nbsp;</p>
           					<p class="p">— N посетителей сайта</p>
           					<p class="p">— NN орбит просчитано</p>
-          					<p class="p">— NNN человек ознакомились с теорией</p>
+          					<p class="p" id="counter"></p> 
         				</span>
       			</div>
-      			<img class="icon" alt="" src="планетко 1.png">
+      			<img class="icon" alt="" src="планетко.png">
       			
     		</div>
     		<div class="div9" data-scroll-to="container">
       			<label for="eccentricity" class="div10">Эксцентриситет: ᠌</label>
                 <input type="number" class="child" id="eccentricity" />
-      			<label for="naklon" class="div11">Наклон в градусах:  ᠌</label>
-                <input type="number" class="item" id="naklon" />
-      			<label for="rad_pir" class="div12" >Радиус перигея в километрах:  ᠌</label>
-                <input type="number" class="inner" id="rad_pir" />
-      			<label for="arg_pir" class="div13">Аргумент перигея в градусах:  ᠌</label>
-                <input type="number" class="ellipse-div" id="arg_pir" />
-      			<label for="nast_anomaly" class="div14">Настоящая аномалия в градусах:  ᠌</label>
-                <input type="number" class="child1" id="nast_anomaly" />
-      			<label for="pr_vosx" class="div15">Прямое восхождение в градусах:  ᠌</label>
-                <input type="number" class="child2" id="pr_vosx" />
+      			<label for="Semimajor axis" class="div11">Большая полуось в а. е.:  ᠌</label>
+                <input type="number" class="item" id="Semimajor axis" />
+      			<label for="Mood" class="div12" >Наклонение в градусах:  ᠌</label>
+                <input type="number" class="inner" id="Mood" />
+      			<label for="Longitude of the ascending node" class="div13">Долгота восходящего узла:  ᠌</label>
+                <input type="number" class="ellipse-div" id="Longitude of the ascending node" />
+      			<label for="Periapsis argument" class="div14">Аргумент перицентра в градусах:  ᠌</label>
+                <input type="number" class="child1" id="Periapsis argument" />
+      			<label for="Average anomaly" class="div15" data-scroll-to="sranomalyscroll">Средняя аномалия в градусах:  ᠌</label>
+                <input type="number" class="child2" id="Average anomaly" />
                     <div class="div666" id="container3">
-        				<div class="div17">Рассчитать</div>
+        				<div class="div17">Рассчитать </div> 
         		    </div>
-        		<img class="pic2" alt="" src="Космонавтик_2 1.png">
+        		<img class="pic2" alt="" src="Kosmonavtik_upd.png"                       id="image1">
+				<img class="picture-yz-1-icon" alt="" src="Picture_YZ.png">
+      			
+				<img class="picture-xy-1-icon" alt="" src="Picture_XY.png">
+				
+				<img class="picture-xz-1-icon" alt="" src="Picture_XZ.png">
     		</div>
     		<div class="div18">
       			<div class="orbitalika-c-container">
@@ -76,7 +82,7 @@
       			<a class="a" href="PAGE_1.html" target="_parent">Симулятор</a>
                 <a class="a1" href="PAGE_2.html" target="_parent">Теория</a>
                 <a class="a2" href="PAGE_3.html" target="_parent">О проекте</a>
-      			<img class="language-1-icon" alt="" src="language 1.png">
+      			<img class="language-1-icon" alt="" src="language.png">
       			
     		</div>
   	</div>
@@ -84,37 +90,6 @@
   	
   	
   	
-  	<script>
-    		var container3 = document.getElementById("container3");
-    		if(container3) {
-      			container3.addEventListener("click", function () {
-        				window.open("fff");
-        				<!-- Кнопка для симулятора, необходимо заменить функцию -->
-      			});
-    		}
-    		
-    		var container = document.getElementById("container");
-    		if(container) {
-      			container.addEventListener("click", function () {
-        				var anchor = document.querySelector("[data-scroll-to='container']");
-        				if(anchor) {
-          					anchor.scrollIntoView({"block":"start","behavior":"smooth"})
-        				}
-      			});
-    		}
-    		
-    		
-    		var container1 = document.getElementById("container1");
-    		if(container1) {
-      			container1.addEventListener("click", function () {
-        				window.open("PAGE_3.html");
-      			});
-    		}
-    		
-    		var container2 = document.getElementById("container2");
-    		if(container2) {
-      			container2.addEventListener("click", function () {
-        				window.open("PAGE_2.html");
-      			});
-    }</script></body>
+  	<script src="main_script.js"></script>
+</body>
 </html>
