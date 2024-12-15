@@ -490,7 +490,7 @@ object-fit: cover;
     background-color: #a2d5a5;
 }
 
-.picture-yz-1-icon {
+.picture1 {
 	position: absolute;
 	top: 851px;
 	left: 710px;
@@ -498,7 +498,7 @@ object-fit: cover;
 	height: 500px;
 	object-fit: cover;
 	}
-.picture-xy-1-icon {
+.picture2 {
 	position: absolute;
 	top: 851px;
 	left: 114px;
@@ -506,7 +506,7 @@ object-fit: cover;
 	height: 500px;
 	object-fit: cover;
 	}
-.picture-xz-1-icon {
+.picture3 {
 	position: absolute;
 	top: 851px;
 	left: 1306px;
