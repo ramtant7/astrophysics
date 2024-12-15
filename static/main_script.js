@@ -134,3 +134,15 @@ if (days % 10 === 1 && days % 100 !== 11) {
 }
 
 document.getElementById("counter").innerHTML = "Проект существует " + days + " " + daysText;
+
+
+document.getElementById("container3").addEventListener("click", () => {
+    const picture1 = document.getElementById("picture1");
+    const picture2 = document.getElementById("picture2");
+    const picture3 = document.getElementById("picture3");
+  
+    picture1.src = "loading.gif";
+    picture2.src = "loading.gif";
+    picture3.src = "loading.gif";
+  });
+  
