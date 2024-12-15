@@ -83,6 +83,18 @@ if(container3) {
     });
 }
 
+
+var container3 = document.getElementById("container3");
+if(container3) {
+    container3.addEventListener("click", function () {
+            var anchor = document.querySelector("[data-scroll-to='sranomalyscroll']");
+            if(anchor) {
+                anchor.scrollIntoView({"block":"start","behavior":"smooth"})
+            }
+    });
+}
+
+
 var container = document.getElementById("container");
 if(container) {
     container.addEventListener("click", function () {
@@ -107,3 +119,32 @@ if(container2) {
             window.location.href = "PAGE_2.html";
     });
 }
+
+// Для блока статистики, сколько дней прошло с начала проекта. В данном случае 8 декабря 2024 года
+const currentDate = new Date();
+const targetDate = new Date("December 9, 2024");
+const timeDifference = Math.abs(targetDate.getTime() - currentDate.getTime());
+const days = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+let daysText;
+
+if (days % 10 === 1 && days % 100 !== 11) {
+  daysText = "день";
+} else if (days % 10 >= 2 && days % 10 <= 4 && (days % 100 < 10 || days % 100 >= 20)) {
+  daysText = "дня";
+} else {
+  daysText = "дней";
+}
+
+document.getElementById("counter").innerHTML = "Проект существует " + days + " " + daysText;
+
+
+document.getElementById("container3").addEventListener("click", () => {
+    const picture1 = document.getElementById("picture1");
+    const picture2 = document.getElementById("picture2");
+    const picture3 = document.getElementById("picture3");
+  
+    picture1.src = "loading.gif";
+    picture2.src = "loading.gif";
+    picture3.src = "loading.gif";
+  });
+  
