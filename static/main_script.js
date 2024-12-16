@@ -138,13 +138,75 @@ if (days % 10 === 1 && days % 100 !== 11) {
 document.getElementById("counter").innerHTML = "Проект существует " + days + " " + daysText;
 
 
-document.getElementById("container3").addEventListener("click", () => {
-    const picture1 = document.getElementById("picture1");
-    const picture2 = document.getElementById("picture2");
-    const picture3 = document.getElementById("picture3");
-  
-    picture1.src = "loading.gif";
-    picture2.src = "loading.gif";
-    picture3.src = "loading.gif";
+
+// Создаёт красное поле ввода, если значение введено некорректно
+const inputs = document.querySelectorAll('input');
+const submitButton = document.querySelector('button');
+
+const constraints = {
+  eccentricity: {min: 0, max: 1}, // ЗАМЕНИТЬ ОГРАНИЧЕНИЯ ПОД УСЛОВИЯ СИМУЛЯТОРА
+  'Semimajor axis': {min: 0, max: 180}, // Проверка заполненности всех полей
+  Mood: {min: 0, max: 180}, // ЗАМЕНИТЬ ОГРАНИЧЕНИЯ ПОД УСЛОВИЯ СИМУЛЯТОРА
+  'Longitude of the ascending node': {min: 0, max: 360}, // ЗАМЕНИТЬ ОГРАНИЧЕНИЯ ПОД УСЛОВИЯ СИМУЛЯТОРА
+  'Periapsis argument': {min: 0, max: 360}, // // ЗАМЕНИТЬ ОГРАНИЧЕНИЯ ПОД УСЛОВИЯ СИМУЛЯТОРА
+  'Average anomaly': {min: 0, max: 360} // // ЗАМЕНИТЬ ОГРАНИЧЕНИЯ ПОД УСЛОВИЯ СИМУЛЯТОРА
+};
+
+inputs.forEach((input) => {
+  input.addEventListener('input', (e) => {
+    const value = e.target.value;
+    const constraint = constraints[e.target.id];
+
+    if (value < constraint.min || value > constraint.max) {
+      e.target.classList.add('invalid');
+      submitButton.disabled = true;
+    } else {
+      e.target.classList.remove('invalid');
+      submitButton.disabled = false;
+    }
   });
-  
+});
+
+
+
+
+const inputFields = document.querySelectorAll('input');
+const errorMessage = document.getElementById('error-message');
+
+const button = document.getElementById('container3');
+button.addEventListener('click', () => {
+  // Проверка заполненности всех полей
+  for (const inputField of inputFields) {
+    if (inputField.value === '') {
+      errorMessage.style.display = 'block';
+      setTimeout(() => {
+        errorMessage.style.display = 'none';
+      }, 5000);
+      return;
+    }
+  }
+
+  // Проверка значений
+  const constraints = {
+    eccentricity: { min: 0, max: 1 },
+    'Semimajor axis': { min: 0, max: Infinity },
+    Mood: { min: 0, max: 180 },
+    'Longitude of the ascending node': { min: 0, max: 360 },
+    'Periapsis argument': { min: 0, max: 360 },
+    'Average anomaly': { min: 0, max: 360 },
+  };
+  for (const inputField of inputFields) {
+    const constraint = constraints[inputField.id];
+    const value = Number(inputField.value);
+    if (value < constraint.min || value > constraint.max) {
+      errorMessage.style.display = 'block';
+      setTimeout(() => {
+        errorMessage.style.display = 'none';
+      }, 5000);
+      return;
+    }
+  }
+
+  // Выполнение расчета (реальная логика расчета здесь не описана)
+  // ...
+});
