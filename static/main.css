@@ -2,3 +2,8 @@
     font-family: 'Chilly';
     src: url('/font/Chilly.ttf') format('truetype');
 }
+
+body {
+  overflow-x: hidden;  /* Скрыть горизонтальный ползунок прокрутки */
+  overflow-y: scroll;  /* Разрешить вертикальную прокрутку */
+}
