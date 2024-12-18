@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 import imageio
 from joblib import Parallel, delayed
 
-
 def calculate(sentMessage):
     # Шесть Кеплеровских элементов орбиты
     a = np.float64(sentMessage['A'])  # Большая полуось (в астрономических единицах)
@@ -138,11 +137,5 @@ def calculate(sentMessage):
         ('../static/orbit/xz_orbit_animation.gif', xz_images)
     ]
 
-    results = Parallel(n_jobs=-1)(delayed(imageio.mimsave)(f1, f2, fps=24, loop=0) for f1, f2 in files)
+    Parallel(n_jobs=-1)(delayed(imageio.mimsave)(f1, f2, fps=24, loop=0) for f1, f2 in files)
 
-    # # Создание GIF-анимаций
-    # imageio.mimsave('xy_orbit_animation.gif', xy_images, fps=24, loop=0)
-    # imageio.mimsave('yz_orbit_animation.gif', yz_images, fps=24, loop=0)
-    # imageio.mimsave('xz_orbit_animation.gif', xz_images, fps=24, loop=0)
-    #
-    # print("Анимации созданыны! Проверь файлы xy_orbit_animation.gif, yz_orbit_animation.gif и xz_orbit_animation.gif.")

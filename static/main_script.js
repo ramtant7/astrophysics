@@ -14,10 +14,16 @@ socket.addEventListener('message', function (event) {
     let b = c['xy']
     console.log(b)
 
-    let x = document.getElementById('image1')
-    x.src = JSON.parse(event.data)['xy'] + "?" + new Date().getTime()
-    console.log(x)
-    console.log(x.src)
+    let data = JSON.parse(event.data)
+    let time = new Date().getTime()
+    let xy = document.getElementById('imageXY')
+    let xz = document.getElementById('imageXZ')
+    let yz = document.getElementById('imageYZ')
+    xy.src = data['xy'] + "?" + time
+    xz.src = data['xz'] + "?" + time
+    yz.src = data['yz'] + "?" + time
+    console.log(xy)
+    console.log(xy.src)
 //    const messagesDiv = document.getElementById('messages');
 //    const message = document.createElement('p');
 //    message.textContent = `Сервер ответил: ${event.data}`;
@@ -31,6 +37,7 @@ socket.addEventListener('close', function (event) {
 socket.addEventListener('error', function (error) {
     console.error('Ошибка соединения:', error);
 });
+
 
 function sendMessage(message) {
     console.log(message)
@@ -76,23 +83,52 @@ function getTextValue() {
 
 // кнопки
 
+function sendSimulationParam() {
+    sendMessage( getTextValue() )
+}
+
+function scrollDownContainer3() {
+    var anchor = document.querySelector("[data-scroll-to='sranomalyscroll']");
+    if(anchor) {
+        anchor.scrollIntoView({"block":"start","behavior":"smooth"})
+    }
+}
+
+function setLoadingImages() {
+    let imageXY = document.getElementById("imageXY");
+    let imageYZ = document.getElementById("imageYZ");
+    let imageXZ = document.getElementById("imageXZ");
+
+    console.log(imageXY)
+    imageXY.src = "Loading.gif";
+    imageYZ.src = "Loading.gif";
+    imageXZ.src = "Loading.gif";
+    console.log(imageXY)
+}
+
 var container3 = document.getElementById("container3");
 if(container3) {
     container3.addEventListener("click", function () {
-        sendMessage( getTextValue() )
+//        sendMessage( getTextValue() )
+
+        setLoadingImages()
+        sendSimulationParam()
+        scrollDownContainer3()
     });
+
+
 }
 
 
-var container3 = document.getElementById("container3");
-if(container3) {
-    container3.addEventListener("click", function () {
-            var anchor = document.querySelector("[data-scroll-to='sranomalyscroll']");
-            if(anchor) {
-                anchor.scrollIntoView({"block":"start","behavior":"smooth"})
-            }
-    });
-}
+//var container3 = document.getElementById("container3");
+//if(container3) {
+//    container3.addEventListener("click", function () {
+//            var anchor = document.querySelector("[data-scroll-to='sranomalyscroll']");
+//            if(anchor) {
+//                anchor.scrollIntoView({"block":"start","behavior":"smooth"})
+//            }
+//    });
+//}
 
 
 var container = document.getElementById("container");
@@ -138,13 +174,74 @@ if (days % 10 === 1 && days % 100 !== 11) {
 document.getElementById("counter").innerHTML = "Проект существует " + days + " " + daysText;
 
 
-document.getElementById("container3").addEventListener("click", () => {
-    const picture1 = document.getElementById("picture1");
-    const picture2 = document.getElementById("picture2");
-    const picture3 = document.getElementById("picture3");
-  
-    picture1.src = "loading.gif";
-    picture2.src = "loading.gif";
-    picture3.src = "loading.gif";
-  });
-  
+
+
+
+
+//// Создаёт красное поле ввода, если значение введено некорректно
+//const inputs = document.querySelectorAll('input');
+//const submitButton = document.querySelector('button');
+//
+//const constraints = {
+//  eccentricity: {min: 0, max: 1}, // ЗАМЕНИТЬ ОГРАНИЧЕНИЯ ПОД УСЛОВИЯ СИМУЛЯТОРА
+//  'Semimajor axis': {min: 0, max: 180}, // Проверка заполненности всех полей
+//  Mood: {min: 0, max: 180}, // ЗАМЕНИТЬ ОГРАНИЧЕНИЯ ПОД УСЛОВИЯ СИМУЛЯТОРА
+//  'Longitude of the ascending node': {min: 0, max: 360}, // ЗАМЕНИТЬ ОГРАНИЧЕНИЯ ПОД УСЛОВИЯ СИМУЛЯТОРА
+//  'Periapsis argument': {min: 0, max: 360}, // // ЗАМЕНИТЬ ОГРАНИЧЕНИЯ ПОД УСЛОВИЯ СИМУЛЯТОРА
+//  'Average anomaly': {min: 0, max: 360} // // ЗАМЕНИТЬ ОГРАНИЧЕНИЯ ПОД УСЛОВИЯ СИМУЛЯТОРА
+//};
+//
+//inputs.forEach((input) => {
+//  input.addEventListener('input', (e) => {
+//    const value = e.target.value;
+//    const constraint = constraints[e.target.id];
+//
+//    if (value < constraint.min || value > constraint.max) {
+//      e.target.classList.add('invalid');
+//      submitButton.disabled = true;
+//    } else {
+//      e.target.classList.remove('invalid');
+//      submitButton.disabled = false;
+//    }
+//  });
+//});
+//
+//
+//
+//
+//const inputFields = document.querySelectorAll('input');
+//const errorMessage = document.getElementById('error-message');
+//
+//const button = document.getElementById('container3');
+//button.addEventListener('click', () => {
+//  // Проверка заполненности всех полей
+//  for (const inputField of inputFields) {
+//    if (inputField.value === '') {
+//      errorMessage.style.display = 'block';
+//      setTimeout(() => {
+//        errorMessage.style.display = 'none';
+//      }, 5000);
+//      return;
+//    }
+//  }
+//
+//  // Проверка значений
+//  const constraints = {
+//    eccentricity: { min: 0, max: 1 },
+//    'Semimajor axis': { min: 0, max: Infinity },
+//    Mood: { min: 0, max: 180 },
+//    'Longitude of the ascending node': { min: 0, max: 360 },
+//    'Periapsis argument': { min: 0, max: 360 },
+//    'Average anomaly': { min: 0, max: 360 },
+//  };
+//  for (const inputField of inputFields) {
+//    const constraint = constraints[inputField.id];
+//    const value = Number(inputField.value);
+//    if (value < constraint.min || value > constraint.max) {
+//      errorMessage.style.display = 'block';
+//      setTimeout(() => {
+//        errorMessage.style.display = 'none';
+//      }, 5000);
+//      return;
+//    }
+//  }

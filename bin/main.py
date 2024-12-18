@@ -1,13 +1,16 @@
 import os
 import uvicorn
+import asyncio
 import websockets
 from fastapi import FastAPI, WebSocket
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from calculate import calculate
-
+from concurrent.futures import ThreadPoolExecutor
 
 app = FastAPI()
+
+executor = ThreadPoolExecutor()
 
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
@@ -16,7 +19,10 @@ async def websocket_endpoint(websocket: WebSocket):
         while True:
             sentMessage = await websocket.receive_json()  # Ожидаем сообщение от клиента
             print(f"Получено сообщение: {sentMessage}")
-            calculate(sentMessage)
+
+            loop = asyncio.get_event_loop()
+            await loop.run_in_executor(executor, calculate, sentMessage)
+
             # Отправляем ответ клиенту
             await websocket.send_json(
                 {'xy': 'orbit/xy_orbit_animation.gif',
