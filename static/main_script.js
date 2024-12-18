@@ -14,10 +14,16 @@ socket.addEventListener('message', function (event) {
     let b = c['xy']
     console.log(b)
 
-    let x = document.getElementById('image1')
-    x.src = JSON.parse(event.data)['xy'] + "?" + new Date().getTime()
-    console.log(x)
-    console.log(x.src)
+    let data = JSON.parse(event.data)
+    let time = new Date().getTime()
+    let xy = document.getElementById('imageXY')
+    let xz = document.getElementById('imageXZ')
+    let yz = document.getElementById('imageYZ')
+    xy.src = data['xy'] + "?" + time
+    xz.src = data['xz'] + "?" + time
+    yz.src = data['yz'] + "?" + time
+    console.log(xy)
+    console.log(xy.src)
 //    const messagesDiv = document.getElementById('messages');
 //    const message = document.createElement('p');
 //    message.textContent = `Сервер ответил: ${event.data}`;
@@ -31,6 +37,7 @@ socket.addEventListener('close', function (event) {
 socket.addEventListener('error', function (error) {
     console.error('Ошибка соединения:', error);
 });
+
 
 function sendMessage(message) {
     console.log(message)
@@ -76,23 +83,52 @@ function getTextValue() {
 
 // кнопки
 
+function sendSimulationParam() {
+    sendMessage( getTextValue() )
+}
+
+function scrollDownContainer3() {
+    var anchor = document.querySelector("[data-scroll-to='sranomalyscroll']");
+    if(anchor) {
+        anchor.scrollIntoView({"block":"start","behavior":"smooth"})
+    }
+}
+
+function setLoadingImages() {
+    let imageXY = document.getElementById("imageXY");
+    let imageYZ = document.getElementById("imageYZ");
+    let imageXZ = document.getElementById("imageXZ");
+
+    console.log(imageXY)
+    imageXY.src = "Loading.gif";
+    imageYZ.src = "Loading.gif";
+    imageXZ.src = "Loading.gif";
+    console.log(imageXY)
+}
+
 var container3 = document.getElementById("container3");
 if(container3) {
     container3.addEventListener("click", function () {
-        sendMessage( getTextValue() )
+//        sendMessage( getTextValue() )
+
+        setLoadingImages()
+        sendSimulationParam()
+        scrollDownContainer3()
     });
+
+
 }
 
 
-var container3 = document.getElementById("container3");
-if(container3) {
-    container3.addEventListener("click", function () {
-            var anchor = document.querySelector("[data-scroll-to='sranomalyscroll']");
-            if(anchor) {
-                anchor.scrollIntoView({"block":"start","behavior":"smooth"})
-            }
-    });
-}
+//var container3 = document.getElementById("container3");
+//if(container3) {
+//    container3.addEventListener("click", function () {
+//            var anchor = document.querySelector("[data-scroll-to='sranomalyscroll']");
+//            if(anchor) {
+//                anchor.scrollIntoView({"block":"start","behavior":"smooth"})
+//            }
+//    });
+//}
 
 
 var container = document.getElementById("container");
