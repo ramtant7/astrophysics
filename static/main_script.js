@@ -79,12 +79,47 @@ function getTextValue() {
 
 }
 
+const inputFields = document.querySelectorAll('input');
+const errorMessage = document.getElementById('error-message');
 
+function checkParams() {
+  // Проверка заполненности всех полей
+  for (const inputField of inputFields) {
+    if (inputField.value === '') {
+      errorMessage.style.display = 'block';
+      setTimeout(() => {
+        errorMessage.style.display = 'none';
+      }, 5000);
+      return null;
+    }
+  }
 
-// кнопки
+  // Проверка значений
+  const constraints = {
+    eccentricity: { min: 0, max: 1 },
+    'Semimajor axis': { min: 0, max: Infinity },
+    Mood: { min: 0, max: 180 },
+    'Longitude of the ascending node': { min: 0, max: 360 },
+    'Periapsis argument': { min: 0, max: 360 },
+    'Average anomaly': { min: 0, max: 360 },
+  };
+  for (const inputField of inputFields) {
+    const constraint = constraints[inputField.id];
+    const value = Number(inputField.value);
+    if (value < constraint.min || value > constraint.max) {
+      errorMessage.style.display = 'block';
+      setTimeout(() => {
+        errorMessage.style.display = 'none';
+      }, 5000);
+      return null;
+    }
+  }
 
-function sendSimulationParam() {
-    sendMessage( getTextValue() )
+  return getTextValue()
+}
+
+function sendSimulationParam(param) {
+    sendMessage(param)
 }
 
 function scrollDownContainer3() {
@@ -109,26 +144,19 @@ function setLoadingImages() {
 var container3 = document.getElementById("container3");
 if(container3) {
     container3.addEventListener("click", function () {
-//        sendMessage( getTextValue() )
-
-        setLoadingImages()
-        sendSimulationParam()
-        scrollDownContainer3()
+        let param = checkParams()
+        if (param != null) {
+            setLoadingImages()
+            sendSimulationParam(param)
+            scrollDownContainer3()
+        }
     });
 
 
 }
 
 
-//var container3 = document.getElementById("container3");
-//if(container3) {
-//    container3.addEventListener("click", function () {
-//            var anchor = document.querySelector("[data-scroll-to='sranomalyscroll']");
-//            if(anchor) {
-//                anchor.scrollIntoView({"block":"start","behavior":"smooth"})
-//            }
-//    });
-//}
+
 
 
 var container = document.getElementById("container");
@@ -177,7 +205,7 @@ document.getElementById("counter").innerHTML = "Проект существуе�
 
 // Создаёт красное поле ввода, если значение введено некорректно
 const inputs = document.querySelectorAll('input');
-const submitButton = document.querySelector('button');
+const submitButton = document.querySelector('.div666');
 
 const constraints = {
   eccentricity: {min: 0, max: 1}, // ЗАМЕНИТЬ ОГРАНИЧЕНИЯ ПОД УСЛОВИЯ СИМУЛЯТОРА
@@ -206,43 +234,5 @@ inputs.forEach((input) => {
 
 
 
-const inputFields = document.querySelectorAll('input');
-const errorMessage = document.getElementById('error-message');
 
-const button = document.getElementById('container3');
-button.addEventListener('click', () => {
-  // Проверка заполненности всех полей
-  for (const inputField of inputFields) {
-    if (inputField.value === '') {
-      errorMessage.style.display = 'block';
-      setTimeout(() => {
-        errorMessage.style.display = 'none';
-      }, 5000);
-      return;
-    }
-  }
 
-  // Проверка значений
-  const constraints = {
-    eccentricity: { min: 0, max: 1 },
-    'Semimajor axis': { min: 0, max: Infinity },
-    Mood: { min: 0, max: 180 },
-    'Longitude of the ascending node': { min: 0, max: 360 },
-    'Periapsis argument': { min: 0, max: 360 },
-    'Average anomaly': { min: 0, max: 360 },
-  };
-  for (const inputField of inputFields) {
-    const constraint = constraints[inputField.id];
-    const value = Number(inputField.value);
-    if (value < constraint.min || value > constraint.max) {
-      errorMessage.style.display = 'block';
-      setTimeout(() => {
-        errorMessage.style.display = 'none';
-      }, 5000);
-      return;
-    }
-  }
-
-  // Выполнение расчета (реальная логика расчета здесь не описана)
-  // ...
-});
