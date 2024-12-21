@@ -96,6 +96,7 @@ function checkParams() {
 
   // Проверка значений
   const constraints = {
+
     eccentricity: { min: 0, max: 0.9999999999999999999999},
     'Semimajor axis': { min: 0.1, max: 999999999999999999999 },
     Mood: { min: 0, max: 360 },
@@ -230,3 +231,4 @@ inputs.forEach((input) => {
     }
   });
 });
+
