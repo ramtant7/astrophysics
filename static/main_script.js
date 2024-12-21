@@ -96,9 +96,10 @@ function checkParams() {
 
   // Проверка значений
   const constraints = {
-    eccentricity: { min: 0, max: 1 },
-    'Semimajor axis': { min: 0, max: Infinity },
-    Mood: { min: 0, max: 180 },
+
+    eccentricity: { min: 0, max: 0.9999999999999999999999},
+    'Semimajor axis': { min: 0.1, max: 999999999999999999999 },
+    Mood: { min: 0, max: 360 },
     'Longitude of the ascending node': { min: 0, max: 360 },
     'Periapsis argument': { min: 0, max: 360 },
     'Average anomaly': { min: 0, max: 360 },
@@ -208,9 +209,9 @@ const inputs = document.querySelectorAll('input');
 const submitButton = document.querySelector('.div666');
 
 const constraints = {
-  eccentricity: {min: 0, max: 1}, // ЗАМЕНИТЬ ОГРАНИЧЕНИЯ ПОД УСЛОВИЯ СИМУЛЯТОРА
-  'Semimajor axis': {min: 0, max: 180}, // Проверка заполненности всех полей
-  Mood: {min: 0, max: 180}, // ЗАМЕНИТЬ ОГРАНИЧЕНИЯ ПОД УСЛОВИЯ СИМУЛЯТОРА
+  eccentricity: {min: 0, max: 0.9999999999999999999999}, // ЗАМЕНИТЬ ОГРАНИЧЕНИЯ ПОД УСЛОВИЯ СИМУЛЯТОРА
+  'Semimajor axis': {min: 0, max: 999999999999999999999}, // Проверка заполненности всех полей
+  Mood: {min: 0, max: 360}, // ЗАМЕНИТЬ ОГРАНИЧЕНИЯ ПОД УСЛОВИЯ СИМУЛЯТОРА
   'Longitude of the ascending node': {min: 0, max: 360}, // ЗАМЕНИТЬ ОГРАНИЧЕНИЯ ПОД УСЛОВИЯ СИМУЛЯТОРА
   'Periapsis argument': {min: 0, max: 360}, // // ЗАМЕНИТЬ ОГРАНИЧЕНИЯ ПОД УСЛОВИЯ СИМУЛЯТОРА
   'Average anomaly': {min: 0, max: 360} // // ЗАМЕНИТЬ ОГРАНИЧЕНИЯ ПОД УСЛОВИЯ СИМУЛЯТОРА
@@ -230,9 +231,4 @@ inputs.forEach((input) => {
     }
   });
 });
-
-
-
-
-
 
