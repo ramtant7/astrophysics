@@ -64,7 +64,7 @@ def calculate(sentMessage):
     axis_limits = [-1.5, 1.5]
     line_color = "blue"
     point_color = "red"
-    sun_color = "yellow"
+    sun_color = "orange"
 
 
     # Функция для генерации одного кадра
@@ -138,4 +138,3 @@ def calculate(sentMessage):
     ]
 
     Parallel(n_jobs=-1)(delayed(imageio.mimsave)(f1, f2, fps=24, loop=0) for f1, f2 in files)
-
