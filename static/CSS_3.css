@@ -98,16 +98,25 @@
     text-decoration: underline;
     line-height: 130%;
     font-weight: 500;
-    color: inherit;
+    color: #585858;
 }
 .language-1-icon {
-    position: absolute;
-    top: 37px;
-    left: 1832px;
-    width: 34px;
-    height: 34px;
-    object-fit: cover;
+	position: absolute;
+	top: 37px;
+	left: 1781px;
+	width: 34px;
+	height: 34px;
+	object-fit: cover;
 }
+.regestr-icon {
+	position: absolute;
+	top: 37px;
+	left: 1844px;
+	width: 26px;
+	height: 34px;
+	object-fit: cover;
+	cursor: pointer;
+	}
 .div4 {
     position: absolute;
     top: 0px;

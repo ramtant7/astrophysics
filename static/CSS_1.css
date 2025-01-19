@@ -1,3 +1,4 @@
+
 .div1 {
 	position: absolute;
 	top: 93px;
@@ -105,14 +106,6 @@
 	width: 1028px;
 	height: 310px;
 }
-.icon {
-	position: absolute;
-	top: 140px;
-	left: 1453px;
-	width: 296px;
-	height: 302px;
-	object-fit: cover;
-}
 .div8 {
   position: absolute;
   top: 2352px;
@@ -172,7 +165,7 @@
 	left: calc(50% - 129px);
 	line-height: 130%;
 	font-weight: 500;
-}
+}	
 .div16 {
 	position: absolute;
 	top: 653px;
@@ -379,7 +372,7 @@
 	text-decoration: underline;
 	line-height: 130%;
 	font-weight: 500;
-	color: inherit;
+	color: #585858;
 }
 .a1 {
 	position: absolute;
@@ -402,11 +395,20 @@
 .language-1-icon {
 	position: absolute;
 	top: 37px;
-	left: 1832px;
+	left: 1781px;
 	width: 34px;
 	height: 34px;
 	object-fit: cover;
 }
+.regestr-icon {
+	position: absolute;
+	top: 37px;
+	left: 1844px;
+	width: 26px;
+	height: 34px;
+	object-fit: cover;
+	cursor: pointer;
+	}
 .div25 {
 	position: absolute;
 	top: 0px;
@@ -429,20 +431,6 @@
   font-size: 48px;
   color: #000;
   font-family: Chilly;
-}
-
-.div666 {
-  position: absolute;
-  top: 653px;
-  left: 736px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 15px;
-  background-color: #9eb7e5;
-  width: 448px;
-  height: 102px;
-  overflow: hidden;
-  cursor: pointer;
-  color: #fff;
 }
 
 .pic2 {
@@ -535,3 +523,54 @@ object-fit: cover;
 
   }
   
+
+		
+		.icon {
+			position: absolute;
+			top: 140px;
+			left: 1453px;
+			width: 296px;
+			height: 302px;
+			object-fit: cover;
+			}
+
+			.div8666 {
+				position: absolute;
+				top: calc(50% - 31.5px);
+				left: calc(50% - 129px);
+				line-height: 130%;
+				font-weight: 500;
+				}
+				.div7666 {
+				position: absolute;
+				top: 657px;
+				left: 659px;
+				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+				border-radius: 15px;
+				background-color: #9eb7e5;
+				width: 448px;
+				height: 102px;
+				overflow: hidden;
+				cursor: pointer;
+				color: #fff;
+				}
+				.d666 {
+				position: absolute;
+				top: calc(50% - 31.5px);
+				left: calc(50% - 29px);
+				line-height: 130%;
+				font-weight: 500;
+				}
+				.div9666 {
+				position: absolute;
+				top: 657px;
+				left: 1143px;
+				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+				border-radius: 15px;
+				background-color: #9eb7e5;
+				width: 118px;
+				height: 102px;
+				overflow: hidden;
+				cursor: pointer;
+				color: #fff;
+				}

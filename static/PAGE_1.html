@@ -7,7 +7,8 @@
 	<link rel="stylesheet"  href="main.css"/>
   	<link rel="stylesheet"  href="CSS_1.css"/>
 
-	<title>Orbitalika</title>
+	<title>Orbitalika: Главная</title>
+	<link rel="shortcut icon" href="планетко.png" />
 
 </head>
 <body>
@@ -29,7 +30,7 @@
         				<span class="n-container1">
           					<p class="p">Статистика проекта:</p>
           					<p class="p">&nbsp;</p>
-          					<p class="p">— N посетителей сайта</p>
+          					<p class="p">— N зарегестрированных пользователей</p>
           					<p class="p">— NN орбит просчитано</p>
           					<p class="p" id="counter"></p> 
         				</span>
@@ -39,23 +40,26 @@
     		</div>
     		<div class="div9" data-scroll-to="container">
 				<div id="error-message">К сожалению, мы не можем рассчитать эту орбиту.</div>
-      			<label for="eccentricity" class="div10" step="0.1">Эксцентриситет: ᠌</label>
-                <input type="number" class="child" id="eccentricity" />
+      			<label for="eccentricity" class="div10" >Эксцентриситет: ᠌</label>
+                <input type="number" class="child" id="eccentricity" step="0.1" autofocus onkeydown="if(event.key === 'Enter'){ event.preventDefault(); document.getElementById('Semimajor axis').focus(); }" />
       			<label for="Semimajor axis" class="div11">Большая полуось в а. е.:  ᠌</label>
-                <input type="number" class="item" id="Semimajor axis" />
+                <input type="number" class="item" id="Semimajor axis" autofocus onkeydown="if(event.key === 'Enter'){ event.preventDefault(); document.getElementById('Mood').focus(); }" />
       			<label for="Mood" class="div12" >Наклонение в градусах:  ᠌</label>
-                <input type="number" class="inner" id="Mood" />
+                <input type="number" class="inner" id="Mood" autofocus onkeydown="if(event.key === 'Enter'){ event.preventDefault(); document.getElementById('Longitude of the ascending node').focus(); }" />
       			<label for="Longitude of the ascending node" class="div13">Долгота восходящего узла:  ᠌</label>
-                <input type="number" class="ellipse-div" id="Longitude of the ascending node" />
+                <input type="number" class="ellipse-div" id="Longitude of the ascending node" autofocus onkeydown="if(event.key === 'Enter'){ event.preventDefault(); document.getElementById('Periapsis argument').focus(); }" />
       			<label for="Periapsis argument" class="div14">Аргумент перицентра в градусах:  ᠌</label>
-                <input type="number" class="child1" id="Periapsis argument" />
+                <input type="number" class="child1" id="Periapsis argument" autofocus onkeydown="if(event.key === 'Enter'){ event.preventDefault(); document.getElementById('Average anomaly').focus(); }"/>
 
       			<label for="Average anomaly" class="div15" data-scroll-to="sranomalyscroll">Средняя аномалия в градусах:  ᠌</label>
 
                 <input type="number" class="child2" id="Average anomaly" />
-                    <div class="div666" id="container3">
-        				<div class="div17">Рассчитать </div> 
+                    <div class="div7666" id="container3">
+        				<div class="div8666">Рассчитать </div> 
         		    </div>
+					<div class="div9666">
+						<div class="d666">3D</div>
+					</div>
 
         		<img class="pic2" alt="" src="Kosmonavtik_upd.png"                       id="image1">
 				<img id="imageXY" class="picture1" alt="" src="Picture_XY.png">
@@ -87,7 +91,8 @@
       			<a class="a" href="PAGE_1.html" target="_parent">Симулятор</a>
                 <a class="a1" href="PAGE_2.html" target="_parent">Теория</a>
                 <a class="a2" href="PAGE_3.html" target="_parent">О проекте</a>
-      			<img class="language-1-icon" alt="" src="language.png">
+				<img class="language-1-icon" alt="" src="language.png">
+				<img class="regestr-icon" alt="" src="regestr.png" id="regestrIcon">
       			
     		</div>
   	</div>

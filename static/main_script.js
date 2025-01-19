@@ -185,6 +185,13 @@ if(container2) {
     });
 }
 
+var regestrIcon = document.getElementById("regestrIcon");
+if(regestrIcon) {
+regestrIcon.addEventListener("click", function () {
+window.open("PAGE_5.html");
+});
+}
+
 // Для блока статистики, сколько дней прошло с начала проекта. В данном случае 8 декабря 2024 года
 const currentDate = new Date();
 const targetDate = new Date("December 9, 2024");
@@ -232,3 +239,7 @@ inputs.forEach((input) => {
   });
 });
 
+window.onload = function() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+};

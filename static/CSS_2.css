@@ -25,7 +25,7 @@
     text-decoration: underline;
     line-height: 130%;
     font-weight: 500;
-    color: inherit;
+    color: #585858;
 }
 .a2 {
     position: absolute;
@@ -37,13 +37,22 @@
     color: inherit;
 }
 .language-1-icon {
-    position: absolute;
-    top: 37px;
-    left: 1832px;
-    width: 34px;
-    height: 34px;
-    object-fit: cover;
+	position: absolute;
+	top: 37px;
+	left: 1781px;
+	width: 34px;
+	height: 34px;
+	object-fit: cover;
 }
+.regestr-icon {
+	position: absolute;
+	top: 37px;
+	left: 1844px;
+	width: 26px;
+	height: 34px;
+	object-fit: cover;
+	cursor: pointer;
+	}
 .div {
     position: absolute;
     top: 0px;
@@ -262,3 +271,24 @@
     font-family: Chilly;
 }
 
+.div2:hover {
+    color: #000000;
+  }
+  .div3:hover {
+    color: #000000;
+  }
+  .div4:hover {
+    color: #000000;
+  }
+  .div5:hover {
+    color: #000000;
+  }
+  .a:hover {
+    color: #000000;
+  }
+  .a1:hover {
+    color: #000000;
+  }
+  .a2:hover {
+    color: #000000;
+  }
