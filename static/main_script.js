@@ -243,3 +243,102 @@ window.onload = function() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 };
+
+
+
+// Функция для показа уведомлений
+function showToast(message, type = 'success') {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.className = `toast ${type}`;
+  
+  setTimeout(() => {
+      toast.className = 'toast hidden';
+  }, 3000);
+}
+
+// Переключение между формами
+function showForm(formId) {
+  document.querySelectorAll('.auth-container').forEach(form => {
+      form.classList.add('hidden');
+  });
+  document.getElementById(formId).classList.remove('hidden');
+}
+
+// Валидация email
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}
+
+// Обработчик входа
+function handleLogin(event) {
+  event.preventDefault();
+  
+  const email = document.getElementById('loginEmail').value;
+  const password = document.getElementById('loginPassword').value;
+  
+  if (!validateEmail(email)) {
+      showToast('Введите корректный email', 'error');
+      return;
+  }
+  
+  if (password.length < 6) {
+      showToast('Пароль должен быть не менее 6 символов', 'error');
+      return;
+  }
+  
+  // Здесь будет логика входа
+  console.log('Вход:', { email, password });
+  showToast('Успешный вход!');
+}
+
+// Обработчик регистрации
+function handleRegister(event) {
+  event.preventDefault();
+  
+  const email = document.getElementById('registerEmail').value;
+  const password = document.getElementById('registerPassword').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+  
+  if (!validateEmail(email)) {
+      showToast('Введите корректный email', 'error');
+      return;
+  }
+  
+  if (password.length < 6) {
+      showToast('Пароль должен быть не менее 6 символов', 'error');
+      return;
+  }
+  
+  if (password !== confirmPassword) {
+      showToast('Пароли не совпадают', 'error');
+      return;
+  }
+  
+  // Здесь будет логика регистрации
+  console.log('Регистрация:', { email, password });
+  showToast('Регистрация успешна!');
+  
+  // Переход к форме входа
+  setTimeout(() => showForm('loginForm'), 1500);
+}
+
+// Обработчик сброса пароля
+function handleReset(event) {
+  event.preventDefault();
+  
+  const email = document.getElementById('resetEmail').value;
+  
+  if (!validateEmail(email)) {
+      showToast('Введите корректный email', 'error');
+      return;
+  }
+  
+  // Здесь будет логика сброса пароля
+  console.log('Сброс пароля:', { email });
+  showToast('Инструкции по сбросу пароля отправлены на email');
+  
+  // Переход к форме входа
+  setTimeout(() => showForm('loginForm'), 1500);
+}
