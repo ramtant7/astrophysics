@@ -1,20 +1,120 @@
 <!DOCTYPE html>
-<html lang="ru" class="notranslate" translate="no">
+<html>
 <head>
-    <meta name="google" content="notranslate">
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, width=device-width">
-
-    <link rel="stylesheet"  href="./CSS_5.css" />
-	<link rel="stylesheet"  href="main.css"/>
-
-    <title>Orbitalika: Аккаунт</title>
-    <link rel="shortcut icon" href="планетко.png" />
-
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	<link rel="stylesheet"  href="./index.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik One:wght@400&display=swap" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chilly UI:ital,wght@0,700;1,700&display=swap" />
+      <link rel="stylesheet"  href="./CSS_5.css" />
+  	
+  	
 </head>
 <body>
-    <div>В разработке</div>
-<script src="main_script.js"></script>
-
+  	
+  	  <!-- Форма входа -->
+        <div class="auth-container" id="loginForm">
+            <div class="auth-box">
+                <h2>ORBITALIKA</h2>
+                <p class="subtitle">Введите свои данные для входа</p>
+                
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <div class="input-wrapper">
+                            <i class="icon">📧</i>
+                            <input type="email" id="loginEmail" required placeholder="your@email.com">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loginPassword">Пароль</label>
+                        <div class="input-wrapper">
+                            <i class="icon">🔒</i>
+                            <input type="password" id="loginPassword" required placeholder="••••••••">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Войти</button>
+                </form>
+                
+                <div class="auth-links">
+                    <a href="#" onclick="showForm('resetForm')">Забыли пароль?</a>
+                    <a href="#" onclick="showForm('registerForm')">Регистрация</a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Форма регистрации -->
+        <div class="auth-container hidden" id="registerForm">
+            <div class="auth-box">
+                <h2>Регистрация</h2>
+                <p class="subtitle">Создайте новый аккаунт</p>
+                
+                <form onsubmit="handleRegister(event)">
+                    <div class="form-group">
+                        <label for="registerEmail">Email</label>
+                        <div class="input-wrapper">
+                            <i class="icon">📧</i>
+                            <input type="email" id="registerEmail" required placeholder="your@email.com">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="registerPassword">Пароль</label>
+                        <div class="input-wrapper">
+                            <i class="icon">🔒</i>
+                            <input type="password" id="registerPassword" required placeholder="••••••••">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Подтвердите пароль</label>
+                        <div class="input-wrapper">
+                            <i class="icon">🔒</i>
+                            <input type="password" id="confirmPassword" required placeholder="••••••••">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Зарегистрироваться</button>
+                </form>
+                
+                <div class="auth-links">
+                    <a href="#" onclick="showForm('loginForm')">Уже есть аккаунт? Войти</a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Форма сброса пароля -->
+        <div class="auth-container hidden" id="resetForm">
+            <div class="auth-box">
+                <h2>Сброс пароля</h2>
+                <p class="subtitle">Введите email для восстановления доступа</p>
+                
+                <form onsubmit="handleReset(event)">
+                    <div class="form-group">
+                        <label for="resetEmail">Email</label>
+                        <div class="input-wrapper">
+                            <i class="icon">📧</i>
+                            <input type="email" id="resetEmail" required placeholder="your@email.com">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Отправить инструкции</button>
+                </form>
+                
+                <div class="auth-links">
+                    <a href="#" onclick="showForm('loginForm')">Вернуться к входу</a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Уведомление -->
+        <div class="toast hidden" id="toast"></div>
+        <script src="main_script.js"></script>
+  	
+  	
+  	
 </body>
 </html>
