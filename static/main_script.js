@@ -141,6 +141,9 @@ function setLoadingImages() {
     imageXZ.src = "Loading.gif";
     console.log(imageXY)
 }
+function set setLoadingThreeD(){
+    window.open("parabolic_orbit.html")
+}
 
 var container3 = document.getElementById("container3");
 if(container3) {
@@ -152,11 +155,19 @@ if(container3) {
             scrollDownContainer3()
         }
     });
-
-
 }
 
-
+var container4 = document.getElementById("container4");
+if(container4) {
+    container4.addEventListener("click", function () {
+        let param = checkParams()
+        if (param != null) {
+            setLoadingImages()
+            sendSimulationParam(param)
+            scrollDownContainer3()
+        }
+    });
+}
 
 
 
