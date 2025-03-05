@@ -28,8 +28,8 @@ Work on the simulator, as well as on the entire site, continues. In the future, 
 2. Clone the repository from our GitHub
 3. Open the console and open the folder with our project in it
 4. Enter these commands in the desired sequence (*** is the name of the venv/env file, it is the same everywhere):
-1. python -m venv .***
-2. ls -la *(if you find the file in the list, then everything worked out)*
-3. source .***/bin/activate
-4. pip install -r requirements.txt
+   1. python -m venv .***
+   2. ls -la *(if you find the file in the list, then everything worked out)*
+   3. source .***/bin/activate
+   4. pip install -r requirements.txt
 5. Then wait for the successful download. You can start running the project.
