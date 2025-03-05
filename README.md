@@ -9,10 +9,10 @@
 2. Клонируйте репозиторий из нашего GitHub
 3. Откройте консоль и откройте в ней папку с нашим проектом
 4. Введите данные команды в нужной последовательности (*** — это название файла venv/env , оно везде одинаковое):
-   1. python -m venv .***
-   2. ls -la *(если найдёте файл в перечисленном списке, то всё получилось)*
-   3. source .***/bin/activate
-   4. pip install -r requirements.txt
+   4.1. python -m venv .***
+   4.2. ls -la *(если найдёте файл в перечисленном списке, то всё получилось)*
+   4.3. source .***/bin/activate
+   4.4. pip install -r requirements.txt
 5.  После чего дожидаемся успешной загрузки. Можно приступать к запуску проекта.**
 
 ———
@@ -28,8 +28,8 @@ Work on the simulator, as well as on the entire site, continues. In the future, 
 2. Clone the repository from our GitHub
 3. Open the console and open the folder with our project in it
 4. Enter these commands in the desired sequence (*** is the name of the venv/env file, it is the same everywhere):
-   1. python -m venv .***
-   2. ls -la *(if you find the file in the list, then everything worked out)*
-   3. source .***/bin/activate
-   4. pip install -r requirements.txt
+   4.1. python -m venv .***
+   4.2. ls -la *(if you find the file in the list, then everything worked out)*
+   4.3. source .***/bin/activate
+   4.4. pip install -r requirements.txt
 5. Then wait for the successful download. You can start running the project.
