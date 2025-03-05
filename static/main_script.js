@@ -141,7 +141,7 @@ function setLoadingImages() {
     imageXZ.src = "Loading.gif";
     console.log(imageXY)
 }
-function set setLoadingThreeD(){
+function setLoadingThreeD() {
     window.open("parabolic_orbit.html")
 }
 
