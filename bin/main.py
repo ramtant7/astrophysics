@@ -6,6 +6,7 @@ from fastapi import FastAPI, WebSocket
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from calculate import calculate
+from test61 import calculate3d
 from concurrent.futures import ThreadPoolExecutor
 
 app = FastAPI()
@@ -21,14 +22,26 @@ async def websocket_endpoint(websocket: WebSocket):
             print(f"Получено сообщение: {sentMessage}")
 
             loop = asyncio.get_event_loop()
-            await loop.run_in_executor(executor, calculate, sentMessage)
+            if sentMessage['Type'] == '2D':
+                await loop.run_in_executor(executor, calculate, sentMessage)
 
-            # Отправляем ответ клиенту
-            await websocket.send_json(
-                {'xy': 'orbit/xy_orbit_animation.gif',
-                 'xz': 'orbit/xz_orbit_animation.gif',
-                 'yz': 'orbit/yz_orbit_animation.gif'})
+                # Отправляем ответ клиенту
+                await websocket.send_json(
+                    {'xy': 'orbit/xy_orbit_animation.gif',
+                     'xz': 'orbit/xz_orbit_animation.gif',
+                     'yz': 'orbit/yz_orbit_animation.gif',
+                     'Type': '2D'})
 
+            elif sentMessage['Type'] == '3D':
+                output_filename = await loop.run_in_executor(executor, calculate3d, sentMessage)
+                # Отправляем ответ клиенту
+                print(output_filename)
+                await websocket.send_json(
+                    {'xyz3D': output_filename,
+                     'Type': '3D'})
+
+            else:
+                print('Error Type')
     except websockets.ConnectionClosed:
         print("Соединение закрыто.")
 
