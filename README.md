@@ -46,14 +46,20 @@ Work on the simulator, as well as on the entire site, continues. In the future, 
   
 3. Open the console and open the folder with our project in it
   
-4. Enter these commands in the desired sequence (*** is the name of the venv/env file, it is the same everywhere):
-   
+4. Enter these commands in the required sequence (*** is the name of the venv/env file, it is the same everywhere):
+
     1: python -m venv .***
-   
-    2: ls -la *(if you find the file in the list, then everything worked out)*
-   
+
+    2: ls -la *(if you find the file in the list, then everything worked)*
+
     3: source .***/bin/activate
-   
+
     4: pip install -r requirements.txt
-   
-5. Then wait for the successful download. You can start running the project.
+
+5. Then wait for the download to be successful. Add the commands to the command line:
+
+    1: cd bin
+
+    2: python main.py
+
+6. After that, the site will be launched.
