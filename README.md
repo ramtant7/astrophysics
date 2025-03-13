@@ -30,6 +30,8 @@
 
 6. После этого сайт будет запущен.
 
+***С вопросами по проекту обращайтесь на почту OrbitalikaHub@gmail.com***
+
 ———
 
 **Work on the project continues to this day and is presented at various conferences, so some versions of the repository, including the current one, may work with bugs or not have full functionality.**
@@ -63,3 +65,5 @@ Work on the simulator, as well as on the entire site, continues. In the future, 
     2: python main.py
 
 6. After that, the site will be launched.
+
+***For questions about the project, please contact: OrbitalikaHub@gmail.com***
