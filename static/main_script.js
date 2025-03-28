@@ -1,3 +1,20 @@
+// Добавляем в самое начало файла (перед WebSocket)
+let orbitsCalculated = localStorage.getItem('orbitsCalculated') || 0;
+
+// Функция для обновления статистики на странице
+function updateOrbitsCounter() {
+    const counterElement = document.querySelector('.n-container1 p:nth-of-type(4)');
+    if (counterElement) {
+        counterElement.textContent = `— ${orbitsCalculated} орбит просчитано`;
+        localStorage.setItem('orbitsCalculated', orbitsCalculated);
+    }
+}
+
+// Инициализируем счётчик при загрузке
+document.addEventListener('DOMContentLoaded', function() {
+    updateOrbitsCounter();
+});
+
 //  постоянное соединение
 const socket = new WebSocket("ws://"+ location.host +"/ws");
 
@@ -16,14 +33,20 @@ socket.addEventListener('message', function (event) {
 
     let data = JSON.parse(event.data)
     let time = new Date().getTime()
-    let xy = document.getElementById('imageXY')
-    let xz = document.getElementById('imageXZ')
-    let yz = document.getElementById('imageYZ')
-    xy.src = data['xy'] + "?" + time
-    xz.src = data['xz'] + "?" + time
-    yz.src = data['yz'] + "?" + time
-    console.log(xy)
-    console.log(xy.src)
+    if (data['Type'] == '2D') {
+        let xy = document.getElementById('imageXY')
+        let xz = document.getElementById('imageXZ')
+        let yz = document.getElementById('imageYZ')
+        xy.src = data['xy'] + "?" + time
+        xz.src = data['xz'] + "?" + time
+        yz.src = data['yz'] + "?" + time
+        console.log(xy)
+        console.log(xy.src)
+    } else if (data['Type'] == '3D') {
+        ThreeD = data['xyz3D'] + "?" + time
+        console.log(ThreeD)
+        window.open(ThreeD)
+    }
 //    const messagesDiv = document.getElementById('messages');
 //    const message = document.createElement('p');
 //    message.textContent = `Сервер ответил: ${event.data}`;
@@ -47,7 +70,7 @@ function sendMessage(message) {
 
 // вывод из полей ввода
 
-function getTextValue() {
+function getTextValue(CalcType) {
     let textInput1 = document.getElementById('eccentricity');                 // Получаем ссылку на элемент текстового поля
     E = textInput1.value;                                            // Извлекаем значение из текстового поля
 
@@ -73,7 +96,8 @@ function getTextValue() {
         'I': I,
         'Omega': Omega,
         'omega': omega,
-        'M': M
+        'M': M,
+        'Type': CalcType
     };
     return dataToSend
 
@@ -82,7 +106,7 @@ function getTextValue() {
 const inputFields = document.querySelectorAll('input');
 const errorMessage = document.getElementById('error-message');
 
-function checkParams() {
+function checkParams(CalcType) {
   // Проверка заполненности всех полей
   for (const inputField of inputFields) {
     if (inputField.value === '') {
@@ -116,7 +140,7 @@ function checkParams() {
     }
   }
 
-  return getTextValue()
+  return getTextValue(CalcType)
 }
 
 function sendSimulationParam(param) {
@@ -142,21 +166,28 @@ function setLoadingImages() {
     console.log(imageXY)
 }
 
+
 var container3 = document.getElementById("container3");
 if(container3) {
     container3.addEventListener("click", function () {
-        let param = checkParams()
+        let param = checkParams('2D')
         if (param != null) {
             setLoadingImages()
             sendSimulationParam(param)
             scrollDownContainer3()
         }
     });
-
-
 }
 
-
+var container4 = document.getElementById("container4");
+if(container4) {
+    container4.addEventListener("click", function () {
+        let param = checkParams('3D')
+        if (param != null) {
+            sendSimulationParam(param)
+        }
+    });
+}
 
 
 
@@ -342,3 +373,27 @@ function handleReset(event) {
   // Переход к форме входа
   setTimeout(() => showForm('loginForm'), 1500);
 }
+
+
+socket.addEventListener('message', function(event) {
+    try {
+        const data = JSON.parse(event.data);
+
+        // Увеличиваем счётчик только при успешном ответе
+        if (data.Type && (data.Type === '2D' || data.Type === '3D')) {
+            orbitsCalculated++;
+            updateOrbitsCounter();
+            console.log('Счётчик орбит увеличен:', orbitsCalculated);
+        }
+
+        // Остальная обработка данных...
+        if (data.Type === '2D') {
+            // обработка 2D данных...
+        } else if (data.Type === '3D') {
+            // обработка 3D данных...
+        }
+
+    } catch (error) {
+        console.error('Ошибка обработки сообщения:', error);
+    }
+});
