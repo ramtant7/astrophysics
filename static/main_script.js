@@ -1,3 +1,20 @@
+// Добавляем в самое начало файла (перед WebSocket)
+let orbitsCalculated = localStorage.getItem('orbitsCalculated') || 0;
+
+// Функция для обновления статистики на странице
+function updateOrbitsCounter() {
+    const counterElement = document.querySelector('.n-container1 p:nth-of-type(4)');
+    if (counterElement) {
+        counterElement.textContent = `— ${orbitsCalculated} орбит просчитано`;
+        localStorage.setItem('orbitsCalculated', orbitsCalculated);
+    }
+}
+
+// Инициализируем счётчик при загрузке
+document.addEventListener('DOMContentLoaded', function() {
+    updateOrbitsCounter();
+});
+
 //  постоянное соединение
 const socket = new WebSocket("ws://"+ location.host +"/ws");
 
@@ -356,3 +373,27 @@ function handleReset(event) {
   // Переход к форме входа
   setTimeout(() => showForm('loginForm'), 1500);
 }
+
+
+socket.addEventListener('message', function(event) {
+    try {
+        const data = JSON.parse(event.data);
+
+        // Увеличиваем счётчик только при успешном ответе
+        if (data.Type && (data.Type === '2D' || data.Type === '3D')) {
+            orbitsCalculated++;
+            updateOrbitsCounter();
+            console.log('Счётчик орбит увеличен:', orbitsCalculated);
+        }
+
+        // Остальная обработка данных...
+        if (data.Type === '2D') {
+            // обработка 2D данных...
+        } else if (data.Type === '3D') {
+            // обработка 3D данных...
+        }
+
+    } catch (error) {
+        console.error('Ошибка обработки сообщения:', error);
+    }
+});
