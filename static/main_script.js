@@ -47,10 +47,7 @@ socket.addEventListener('message', function (event) {
         console.log(ThreeD)
         window.open(ThreeD)
     }
-//    const messagesDiv = document.getElementById('messages');
-//    const message = document.createElement('p');
-//    message.textContent = `Сервер ответил: ${event.data}`;
-//    messagesDiv.appendChild(message);
+
 });
 
 socket.addEventListener('close', function (event) {

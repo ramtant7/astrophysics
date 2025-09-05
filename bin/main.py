@@ -2,6 +2,8 @@ import os
 import uvicorn
 import asyncio
 import websockets
+import hashlib
+import random
 from fastapi import FastAPI, WebSocket
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -60,3 +62,14 @@ async def index():
 
 if __name__ =='__main__':
     uvicorn.run(app, host='0.0.0.0', port=8888)
+
+def hash_sha3_256(password,salt):
+    password = 'Pa$$w0r'
+    saltpass = salt + password
+    dk = hashlib.sha3_256(saltpass.encode())
+    return dk
+
+def salt():
+    random.seed()
+    salt = random.getrandbits(64).to_bytes(8, 'big').hex()
+    return salt
