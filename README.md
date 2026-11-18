@@ -1,69 +1,67 @@
-**Работа над проектом ведётся по сей день и представляется в различных конференциях, поэтому некоторые версии репозитория, в том числе и текущая, могут работать с багами или не иметь полного функционала.**
-Данный репозиторий является проектом, сделанном в рамках программы «Инженерный класс в московской школе» на основе МГТУ им. Баумана в 2024 году.
+# Orbitalika
 
-Проект представляет собой сайт для симуляции орбит и орбитальных движений в трёх плоскостях, а также с возможностью моделирования орбиты в 3D на основе шести Кеплеровских элементов орбит, вводимых пользователем.
-Работа над симулятором, как и над всем сайтом, продолжается. В будущем планируется создать площадку для изучения и популяризации астрономии и астрофизики среди детей в игровом формате.
+**Проект временно заморожен с мая 2025 года и представлен "как есть".**
 
-**Инструкция для запуска проекта на ОС Linux при новом, пустом Python:**
+Репозиторий содержит проект, сделанный в рамках программы «Инженерный класс в московской школе» на базе МГТУ им. Баумана в 2024–2025 годах.
 
-1. Установите Python 3.10
+Это сайт для симуляции орбит и орбитальных движений в проекциях на три плоскости. Пользователь вводит шесть кеплеровских элементов орбиты, и сайт строит модель орбиты в 3D.
 
-2. Клонируйте репозиторий из нашего GitHub
+## Достижения
 
-3. Откройте консоль и откройте в ней папку с нашим проектом
+- Авторы стали призёрами бауманской конференции «Спектр» в апреле 2025 года.
+- Проект упомянут в Telegram-канале «GitVerse News» и на сайте «Platform V» от СберТеха в декабрьском дайджесте 2025 года (уже после заморозки).
 
-4. Введите данные команды в нужной последовательности (*** — это название файла venv/env , оно везде одинаковое):
+## Запуск на Linux
 
-    1: python -m venv .***
+Необходим Python 3.10.
 
-    2: ls -la *(если найдёте файл в перечисленном списке, то всё получилось)*
+```bash
+git clone https://github.com/ramtant7/astrophysics.git
+cd astrophysics
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+cd bin
+python main.py
+```
 
-    3: source .***/bin/activate
-   
-    4: pip install -r requirements.txt
+После запуска перейдите по указанному адресу.
 
-5. После чего дожидаемся успешной загрузки. Дописываем команды в командную строку:
+## Контакты
 
-   1: cd bin
-
-   2: python main.py
-
-6. После этого сайт будет запущен.
-
-***С вопросами по проекту обращайтесь на почту: OrbitalikaHub@gmail.com***
+Вопросы по проекту можно направлять на почту: OrbitalikaHub@gmail.com
 
 ———
 
-**Work on the project continues to this day and is presented at various conferences, so some versions of the repository, including the current one, may work with bugs or not have full functionality.**
-This repository is a project made within the framework of the «Engineering Class in Moscow School» program based on MSTU. Bauman in 2024.
+# Orbitalika
 
-The project is a site for simulating orbits and orbital motions in three planes, as well as the ability to simulate an orbit in 3D based on six Keplerian orbital elements entered by the user.
-Work on the simulator, as well as on the entire site, continues. In the future, it is planned to create a platform for the study and popularization of astronomy and astrophysics among children in a playful format.
+**The project has been on hold since May 2025 and is provided "as is".**
 
-**Instructions for running a project on Linux OS with a new, empty Python:**
+This repository contains a project created as part of the «Engineering Class in a Moscow School» program, hosted at Bauman Moscow State Technical University, in 2024–2025.
 
-1. Install Python 3.10
-   
-2. Clone the repository from our GitHub
-  
-3. Open the console and open the folder with our project in it
-  
-4. Enter these commands in the required sequence (*** is the name of the venv/env file, it is the same everywhere):
+It is a website for simulating orbits and orbital motion in projections onto three planes. The user enters six Keplerian orbital elements, and the site builds a 3D model of the orbit.
 
-    1: python -m venv .***
+## Achievements
 
-    2: ls -la *(if you find the file in the list, then everything worked)*
+- The authors won a prize at the Bauman «Spektr» conference in April 2025.
+- The project was featured in the «GitVerse News» Telegram channel and on the «Platform V» website by SberTech in its December 2025 digest (after the project was put on hold).
 
-    3: source .***/bin/activate
+## Running on Linux
 
-    4: pip install -r requirements.txt
+Python 3.10 is required.
 
-5. Then wait for the download to be successful. Add the commands to the command line:
+```bash
+git clone https://github.com/ramtant7/astrophysics.git
+cd astrophysics
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+cd bin
+python main.py
+```
 
-    1: cd bin
+After launching, go to the specified address.
 
-    2: python main.py
+## Contact
 
-6. After that, the site will be launched.
-
-***For questions about the project, please contact: OrbitalikaHub@gmail.com***
+For questions about the project, write to: OrbitalikaHub@gmail.com
