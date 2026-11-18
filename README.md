@@ -27,9 +27,10 @@ python main.py
 
 После запуска перейдите по указанному адресу.
 
-## Контакты
+## Контакты и лицензия
 
 Вопросы по проекту можно направлять на почту: OrbitalikaHub@gmail.com
+Проект распространяется под лицензией MIT. Подробности в файле [LICENSE](LICENSE).
 
 ———
 
@@ -62,6 +63,7 @@ python main.py
 
 After launching, go to the specified address.
 
-## Contact
+## Contacts and License
 
 For questions about the project, write to: OrbitalikaHub@gmail.com
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
