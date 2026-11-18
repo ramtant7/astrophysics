@@ -1,6 +1,6 @@
 # Orbitalika
 
-> **Проект временно заморожен с мая 2025 года и представлен "как есть".**
+**Проект временно заморожен с мая 2025 года и представлен "как есть".**
 
 Репозиторий содержит проект, сделанный в рамках программы «Инженерный класс в московской школе» на базе МГТУ им. Баумана в 2024–2025 годах.
 
@@ -8,8 +8,8 @@
 
 ## Достижения
 
-— Авторы стали призёрами бауманской конференции «Спектр» в апреле 2025 года.
-— Проект упомянут в Telegram-канале «GitVerse News» и на сайте «Platform V» от СберТеха в декабрьском дайджесте 2025 года (уже после заморозки).
+- Авторы стали призёрами бауманской конференции «Спектр» в апреле 2025 года.
+- Проект упомянут в Telegram-канале «GitVerse News» и на сайте «Platform V» от СберТеха в декабрьском дайджесте 2025 года (уже после заморозки).
 
 ## Запуск на Linux
 
@@ -35,7 +35,7 @@ python main.py
 
 # Orbitalika
 
-> **The project has been on hold since May 2025 and is provided "as is".**
+**The project has been on hold since May 2025 and is provided "as is".**
 
 This repository contains a project created as part of the «Engineering Class in a Moscow School» program, hosted at Bauman Moscow State Technical University, in 2024–2025.
 
@@ -43,8 +43,8 @@ It is a website for simulating orbits and orbital motion in projections onto thr
 
 ## Achievements
 
-— The authors won a prize at the Bauman «Spektr» conference in April 2025.
-— The project was featured in the «GitVerse News» Telegram channel and on the «Platform V» website by SberTech in its December 2025 digest (after the project was put on hold).
+- The authors won a prize at the Bauman «Spektr» conference in April 2025.
+- The project was featured in the «GitVerse News» Telegram channel and on the «Platform V» website by SberTech in its December 2025 digest (after the project was put on hold).
 
 ## Running on Linux
 
